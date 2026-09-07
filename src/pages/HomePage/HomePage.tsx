@@ -38,7 +38,7 @@ export default function HomePage(){
  const eventStart = new Date('2026-09-10T00:00:00+09:00').getTime();
  const dday = Math.max(0, Math.ceil((eventStart-now)/86400000));
  return <Page><PageHeader title="KAMF" menu/>
- <Hero><HeroTitle>Now <Red>playing:</Red><br/>KAMF</HeroTitle><HeroMeta>{festival.dates}<br/>{festival.venue}<br/><Countdown>{now < eventStart ? `D-${dday}` : 'NOW'}</Countdown></HeroMeta><Disc><RecordArt size={170}/></Disc></Hero>
+ <Hero><HeroTitle>Now <Red>Playing:</Red><br/>KAMF</HeroTitle><HeroMeta>{festival.dates}<br/>{festival.venue}<br/><Countdown>{now < eventStart ? `D-${dday}` : 'NOW'}</Countdown></HeroMeta><Disc><RecordArt size={170}/></Disc></Hero>
  <Live onClick={()=>nav('/performances')}><LiveTop><span>NOW PLAYING</span><span>{live?'LIVE':'SCHEDULE'}</span></LiveTop><LiveName>{live?.title ?? '2026 KAMF 공연 일정'}</LiveName><div style={{fontSize:11,marginTop:4}}>{live ? `${new Date(live.startAt).toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false})} · ${live.stage}` : '9월 10일부터 12일까지의 무대를 확인하세요.'}</div></Live>
  <SectionTitle>바로가기</SectionTitle><Quick>
  <QuickBtn onClick={()=>nav('/performances')}><CalendarDays size={21}/>공연 일정</QuickBtn><QuickBtn onClick={()=>nav('/map')}><Map size={21}/>배치도</QuickBtn><QuickBtn onClick={()=>nav('/booths')}><Store size={21}/>부스</QuickBtn><QuickBtn onClick={()=>nav('/about')}><Info size={21}/>KAMF 소개</QuickBtn></Quick>
