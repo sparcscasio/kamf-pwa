@@ -630,7 +630,7 @@ export default function PwaInstallModal({
                       메뉴에서
                       <b>
                         {' '}
-                        ‘앱 설치’
+                        ‘설치 및 바로가기 만들기’
                       </b>
                       또는
                       <b>
