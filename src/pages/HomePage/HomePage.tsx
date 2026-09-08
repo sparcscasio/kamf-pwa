@@ -37,11 +37,9 @@ export default function HomePage(){
  const live=useMemo(()=>performanceData.find(p=>new Date(p.startAt).getTime()<=now && p.endAt && now<new Date(p.endAt).getTime()),[performanceData,now]);
  const eventStart = new Date('2026-09-10T00:00:00+09:00').getTime();
  const dday = Math.max(0, Math.ceil((eventStart-now)/86400000));
- return <Page><PageHeader title="KAMF" menu/>
+ return <Page><PageHeader title="2026 KAMF" />
  <Hero><HeroTitle>Now <Red>Playing:</Red><br/>KAMF</HeroTitle><HeroMeta>{festival.dates}<br/>{festival.venue}<br/><Countdown>{now < eventStart ? `D-${dday}` : 'NOW'}</Countdown></HeroMeta><Disc><RecordArt size={170}/></Disc></Hero>
  <Live onClick={()=>nav('/performances')}><LiveTop><span>NOW PLAYING</span><span>{live?'LIVE':'SCHEDULE'}</span></LiveTop><LiveName>{live?.title ?? '2026 KAMF 공연 일정'}</LiveName><div style={{fontSize:11,marginTop:4}}>{live ? `${new Date(live.startAt).toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false})} · ${live.stage}` : '9월 10일부터 12일까지의 무대를 확인하세요.'}</div></Live>
- <SectionTitle>바로가기</SectionTitle><Quick>
- <QuickBtn onClick={()=>nav('/performances')}><CalendarDays size={21}/>공연 일정</QuickBtn><QuickBtn onClick={()=>nav('/map')}><Map size={21}/>배치도</QuickBtn><QuickBtn onClick={()=>nav('/booths')}><Store size={21}/>부스</QuickBtn><QuickBtn onClick={()=>nav('/about')}><Info size={21}/>KAMF 소개</QuickBtn></Quick>
  <SectionTitle>KAMF 소개</SectionTitle><Intro onClick={()=>nav('/about')}><div><IntroTitle>2026 KAMF를 소개합니다</IntroTitle><Text>2012년부터 이어진 KAIST 대표 음악 예술 축제. 올해는 공연을 넘어 다양한 프로그램이 이어지는 ‘축제 주간’으로 확장됩니다.</Text><GoodsBtn onClick={(e)=>{e.stopPropagation();setShowGoods(true)}}><span><Gift size={15} style={{display:'inline',verticalAlign:'middle',marginRight:5}}/>굿즈 교환 조건</span><ChevronRight size={16}/></GoodsBtn></div><Vinyl/></Intro>
  {showGoods&&<BottomSheet onClose={()=>setShowGoods(false)}><SheetTitle>굿즈 & 스티커 교환</SheetTitle><Text>부스에 참여하고 스티커를 모아 굿즈와 교환하세요. 창의학습관 옆 인포부스에서 교환할 수 있습니다.</Text>{goods.map(g=><Good key={g.id}><div><b>{g.name}</b><Text>{g.requiredCategoryLabel??'부스 방문'}</Text></div><b>{g.requiredVisits}개</b></Good>)}</BottomSheet>}
  </Page>
