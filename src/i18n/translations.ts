@@ -64,7 +64,7 @@ export const KO_EN: Record<string, string> = {
     '09.11 (Fri) - 09.12 (Sat)',
 
   'KAIST 잔디광장 및 신학관 앞 오픈스페이스':
-    'KAIST Lawn Plaza & Open Space in front of E11',
+    'KAIST Lawn Plaza & Open Space in front of N13-1',
 
   '잔디광장':
     'Lawn Plaza',
@@ -73,7 +73,7 @@ export const KO_EN: Record<string, string> = {
     'Creative Learning Building',
 
   '(신학관)':
-    '(E11)',
+    '(N13-1)',
 
   '학술문화관':
     'Academic Cultural Complex',
@@ -107,10 +107,10 @@ export const KO_EN: Record<string, string> = {
     'Main Stage',
 
   '신학관 앞 오픈스페이스':
-    'Open Space in front of E11',
+    'Open Space in front of N13-1',
 
   '장소 · 신학관 앞 오픈스페이스 / 09.10(목) 17:00부터':
-    'Venue · Open Space in front of E11 / Sep. 10 (Thu), from 17:00',
+    'Venue · Open Space in front of N13-1 / Sep. 10 (Thu), from 17:00',
 
   '(목)': '(Thu)',
   '(금)': '(Fri)',
