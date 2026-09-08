@@ -100,7 +100,7 @@ export default function KamfIntroPage() {
             letterSpacing: '.18em',
           }}
         >
-          KAIST MUSIC FESTIVAL
+          KAIST ART & MUSIC FESTIVAL
         </div>
 
         <Big>

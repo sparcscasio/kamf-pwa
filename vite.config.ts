@@ -15,7 +15,7 @@ export default defineConfig({
       manifest: {
         name: 'KAMF 2026',
         short_name: 'KAMF',
-        description: 'KAIST Music Festival 2026 모바일 안내 PWA',
+        description: 'KAIST Art & Music Festival 2026 모바일 안내 PWA',
         theme_color: '#7B1E1E',
         background_color: '#F7F0E6',
         display: 'standalone',

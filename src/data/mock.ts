@@ -2,7 +2,7 @@ import type { Booth, GoodsItem, Performance } from '@/types';
 
 export const festival = {
   title: '2026 KAMF',
-  subtitle: 'KAIST Music Festival',
+  subtitle: 'KAIST Art & Music Festival',
   dates: '2026.09.10(목) - 09.12(토)',
   mainDates: '09.11(금) - 09.12(토)',
   venue: 'KAIST 잔디광장 및 신학관 앞 오픈스페이스',

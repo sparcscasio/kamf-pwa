@@ -50,7 +50,7 @@ export default function AppInfoPage() {
       <Logo>KAMF</Logo>
 
       <Meta>
-        2026 · KAIST MUSIC FESTIVAL
+        2026 · KAIST Art & Music Festival
       </Meta>
 
       <Box>
