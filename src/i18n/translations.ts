@@ -387,10 +387,10 @@ export const KO_EN: Record<string, string> = {
     'Henna art and face painting by Grimijua',
 
   '곰발바닥':
-    'Gombalbadak',
+    'Gombal',
 
   '곰발바닥의 체인 팔찌와 슬랑이 제작 체험과 왁뿌볼 판매':
-    'Chain bracelet and Slang-i craft activities, plus Wakppubol sales by Gombalbadak',
+    'Chain bracelet and Slang-i craft activities, plus Wakppubol sales by Gombal',
 
   '캐리커쳐 초청부스':
     'Caricature Booth (Invited)',
