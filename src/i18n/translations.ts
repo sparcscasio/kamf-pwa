@@ -248,12 +248,6 @@ export const KO_EN: Record<string, string> = {
   'KAMF란?':
     'What is KAMF?',
 
-  '2026 KAMF를':
-    'Introducing',
-
-  '소개합니다':
-    '2026 KAMF',
-
   '첫 시작':
     'First held',
 
@@ -655,6 +649,8 @@ export const translations: Record<
 
     'pwa.footnote':
       '브라우저 종류와 OS 버전에 따라 메뉴 이름이나 위치가 조금 다르게 표시될 수 있습니다.',
+    'about.title.line1': '2026 KAMF를',
+    'about.title.line2': '소개합니다',
   },
 
   en: {
@@ -725,6 +721,8 @@ export const translations: Record<
 
     'pwa.footnote':
       'Menu names and locations may vary slightly depending on your browser and OS version.',
+    'about.title.line1': 'Introducing',
+    'about.title.line2': '2026 KAMF',
   },
 };
 

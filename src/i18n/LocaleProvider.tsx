@@ -190,9 +190,7 @@ export function LocaleProvider({
       (value: string) => {
         // key 기반 번역
         if (
-          value.startsWith(
-            'pwa.',
-          )
+          value.includes('.')
         ) {
           return translateKey(
             value,
