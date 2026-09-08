@@ -257,30 +257,46 @@ export default function MorePage() {
         </MenuItem>
 
         <MenuItem
-          type="button"
-          onClick={() =>
-            navigate(
-              '/more/share',
-            )
+        type="button"
+        onClick={async () => {
+          const shareData = {
+            title: '2026 KAMF',
+            text: '2026 KAMF 정보를 확인해보세요!',
+            url: window.location.origin,
+          };
+
+          try {
+            if (navigator.share) {
+              await navigator.share(shareData);
+            } else {
+              await navigator.clipboard.writeText(
+                window.location.origin,
+              );
+
+              alert('KAMF 링크를 복사했습니다.');
+            }
+          } catch (error) {
+            console.error('Share failed:', error);
           }
-        >
-          <IconBox>
-            <Share2 size={18} />
-          </IconBox>
+        }}
+      >
+        <IconBox>
+          <Share2 size={18} />
+        </IconBox>
 
-          <Text>
-            <Title>
-              공유하기
-            </Title>
+        <Text>
+          <Title>
+            공유하기
+          </Title>
 
-            <Sub>
-              친구에게 KAMF를
-              공유해보세요.
-            </Sub>
-          </Text>
+          <Sub>
+            친구에게 KAMF를
+            공유해보세요.
+          </Sub>
+        </Text>
 
-          <Arrow size={16} />
-        </MenuItem>
+        <Arrow size={16} />
+      </MenuItem>
       </MenuGroup>
 
       {installModalOpen && (

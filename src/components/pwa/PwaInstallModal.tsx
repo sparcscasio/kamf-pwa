@@ -14,6 +14,8 @@ import {
   X,
 } from 'lucide-react';
 
+import { useLocale } from '@/i18n/LocaleProvider';
+
 type Platform =
   | 'ios'
   | 'android';
@@ -365,6 +367,8 @@ export default function PwaInstallModal({
   isInstalled,
   onInstall,
 }: Props) {
+  const { t } = useLocale();
+
   const [platform, setPlatform] =
     useState<Platform>('ios');
 
@@ -423,16 +427,13 @@ export default function PwaInstallModal({
         </Eyebrow>
 
         <Title id="pwa-install-title">
-          KAMF를
+          {t('pwa.title.line1')}
           <br />
-          홈 화면에 담아보세요.
+          {t('pwa.title.line2')}
         </Title>
 
         <Description>
-          KAMF 웹사이트를 홈
-          화면에 추가하면 브라우저를
-          매번 열지 않고 앱처럼 바로
-          실행할 수 있습니다.
+          {t('pwa.description')}
         </Description>
 
         <Tabs>
@@ -445,7 +446,7 @@ export default function PwaInstallModal({
               setPlatform('ios')
             }
           >
-            iPhone / iPad
+            {t('pwa.platform.ios')}
           </Tab>
 
           <Tab
@@ -458,7 +459,7 @@ export default function PwaInstallModal({
               setPlatform('android')
             }
           >
-            Android
+            {t('pwa.platform.android')}
           </Tab>
         </Tabs>
 
@@ -470,9 +471,7 @@ export default function PwaInstallModal({
               />
 
               <div>
-                Safari에서 KAMF
-                페이지를 연 뒤 아래
-                순서대로 진행해주세요.
+                {t('pwa.ios.notice')}
               </div>
             </Notice>
 
@@ -487,13 +486,16 @@ export default function PwaInstallModal({
                     <Share2
                       size={14}
                     />
-                    공유 버튼 누르기
+
+                    {t(
+                      'pwa.ios.step1.title',
+                    )}
                   </StepTitle>
 
                   <StepText>
-                    Safari 화면의
-                    공유 아이콘을
-                    눌러주세요.
+                    {t(
+                      'pwa.ios.step1.description',
+                    )}
                   </StepText>
                 </StepBody>
               </Step>
@@ -508,17 +510,16 @@ export default function PwaInstallModal({
                     <Download
                       size={14}
                     />
-                    홈 화면에 추가
+
+                    {t(
+                      'pwa.ios.step2.title',
+                    )}
                   </StepTitle>
 
                   <StepText>
-                    공유 메뉴를 아래로
-                    내려
-                    <b>
-                      {' '}
-                      ‘홈 화면에 추가’
-                    </b>
-                    를 선택해주세요.
+                    {t(
+                      'pwa.ios.step2.description',
+                    )}
                   </StepText>
                 </StepBody>
               </Step>
@@ -533,18 +534,16 @@ export default function PwaInstallModal({
                     <Check
                       size={14}
                     />
-                    추가하기
+
+                    {t(
+                      'pwa.ios.step3.title',
+                    )}
                   </StepTitle>
 
                   <StepText>
-                    화면 오른쪽 위의
-                    <b>
-                      {' '}
-                      ‘추가’
-                    </b>
-                    를 누르면 KAMF가
-                    홈 화면에
-                    생성됩니다.
+                    {t(
+                      'pwa.ios.step3.description',
+                    )}
                   </StepText>
                 </StepBody>
               </Step>
@@ -556,9 +555,9 @@ export default function PwaInstallModal({
               <Installed>
                 <Check size={16} />
 
-                KAMF가 이미 앱
-                형태로 실행되고
-                있습니다.
+                {t(
+                  'pwa.android.installed',
+                )}
               </Installed>
             ) : canInstall ? (
               <InstallButton
@@ -571,7 +570,9 @@ export default function PwaInstallModal({
                   size={17}
                 />
 
-                KAMF 앱 설치하기
+                {t(
+                  'pwa.android.installButton',
+                )}
               </InstallButton>
             ) : (
               <Notice>
@@ -580,10 +581,9 @@ export default function PwaInstallModal({
                 />
 
                 <div>
-                  Chrome에서 KAMF
-                  페이지를 열고
-                  메뉴에서 설치할 수
-                  있습니다.
+                  {t(
+                    'pwa.android.notice',
+                  )}
                 </div>
               </Notice>
             )}
@@ -600,15 +600,16 @@ export default function PwaInstallModal({
                       <MoreVertical
                         size={14}
                       />
-                      Chrome 메뉴
+
+                      {t(
+                        'pwa.android.step1.title',
+                      )}
                     </StepTitle>
 
                     <StepText>
-                      Chrome 오른쪽
-                      위의
-                      <b> ⋮ </b>
-                      버튼을
-                      눌러주세요.
+                      {t(
+                        'pwa.android.step1.description',
+                      )}
                     </StepText>
                   </StepBody>
                 </Step>
@@ -623,22 +624,16 @@ export default function PwaInstallModal({
                       <Download
                         size={14}
                       />
-                      앱 설치
+
+                      {t(
+                        'pwa.android.step2.title',
+                      )}
                     </StepTitle>
 
                     <StepText>
-                      메뉴에서
-                      <b>
-                        {' '}
-                        ‘설치 및 바로가기 만들기’
-                      </b>
-                      또는
-                      <b>
-                        {' '}
-                        ‘홈 화면에
-                        추가’
-                      </b>
-                      를 선택해주세요.
+                      {t(
+                        'pwa.android.step2.description',
+                      )}
                     </StepText>
                   </StepBody>
                 </Step>
@@ -653,15 +648,16 @@ export default function PwaInstallModal({
                       <Check
                         size={14}
                       />
-                      설치 완료
+
+                      {t(
+                        'pwa.android.step3.title',
+                      )}
                     </StepTitle>
 
                     <StepText>
-                      설치를 승인하면
-                      홈 화면에서
-                      KAMF를 앱처럼
-                      실행할 수
-                      있습니다.
+                      {t(
+                        'pwa.android.step3.description',
+                      )}
                     </StepText>
                   </StepBody>
                 </Step>
@@ -671,10 +667,7 @@ export default function PwaInstallModal({
         )}
 
         <Footnote>
-          브라우저 종류와 OS 버전에
-          따라 메뉴 이름이나 위치가
-          조금 다르게 표시될 수
-          있습니다.
+          {t('pwa.footnote')}
         </Footnote>
       </Modal>
     </Overlay>

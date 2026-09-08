@@ -61,7 +61,7 @@ export default function AppInfoPage() {
         <br />
         <br />
 
-        <b>Version</b> 1.0.0
+        <b>Version</b> 1.0.2
         <br />
 
         <b>Theme</b> KAMF Now Playing · Vintage Record
